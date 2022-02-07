@@ -21,8 +21,22 @@ const upload = multer({
     storage: storage,
     limits: {
         fileSize: 1024 * 1024 * 2
+    },
+    fileFilter: function (req, file, cb) {
+        checkFileType(file, cb);
     }
 }).single('fileUploader');
+
+const checkFileType = (file, cb) => {
+    const fileTypes = /jpeg|jpg|png|gif/;
+    const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = fileTypes.test(file.mimetype);
+    if (extname && mimetype) {
+        return cb(null, true)
+    }else {
+        cb('Error: Images Only!');
+    }
+}
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
