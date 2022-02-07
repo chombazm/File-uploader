@@ -1,3 +1,5 @@
+# custom hides
+public/uploads/*
 # Logs
 logs
 *.log

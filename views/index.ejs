@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File uploader - Nodejs</title>
+</head>
+<body>
+    <h2>Upload you files</h2>
+<%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileUploader" id="fileUploader" required>
+        <button type="submit">Upload file</button>
+    </form>
+</body>
+</html>
