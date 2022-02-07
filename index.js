@@ -34,7 +34,7 @@ const checkFileType = (file, cb) => {
     if (extname && mimetype) {
         return cb(null, true)
     }else {
-        cb('Error: Images Only!');
+        cb('Error: Images Only!'); 
     }
 }
 
@@ -58,11 +58,20 @@ app.post('/upload', (req, res) => {
             })
             console.error(err)
         }else {
-            // [TODO: upload image to database] 
+            if(req.file == undefined) {
+                res.render('index', {
+                    title: 'No file selected',
+                    msg: 'No file selected'
+                })
+            }else {
+                // [TODO: upload image to database] 
              res.render('index', {
                 title: 'File uploaded',
-                 msg : "file uploaded successfully"
+                 msg : "file uploaded successfully",
+                 file: `uploads/${req.file.filename}`
              })
+            }
+            
         }
     })
     // console.log(req.files);
