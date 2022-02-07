@@ -1,0 +1,1 @@
+console.log('[Chombazm] Server is running on port 3000');
