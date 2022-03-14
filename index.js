@@ -4,7 +4,7 @@ const multer = require('multer');
 const ejs = require('ejs');
 const path = require('path');
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 // [TODO: move this function to a separate file]
 // const renameFile = (file) => (file + '_' + Date.now() + path.extname(file));
 

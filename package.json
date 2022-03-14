@@ -1,5 +1,5 @@
 {
-  "name": "FileUploader",
+  "name": "file-uploader",
   "version": "1.0.0",
   "description": "Uploading file with nodejs",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "author": "Chombazm",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js && react-scripts start"
   },
   "license": "MIT",
   "dependencies": {
