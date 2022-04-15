@@ -1,5 +1,6 @@
 # custom ignores 
-public/uploads/
+public/uploads/*
+!public/uploads/readMe.txt
 
 # Logs
 logs
